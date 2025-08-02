@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project Overview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-900 p-5 space-y-12">
+
+  <!-- Back Button -->
+  <div class="absolute top-5 left-5">
+    <a href="javascript:history.back()" class="flex items-center space-x-1 hover:underline">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+      <span>Back</span>
+    </a>
+  </div>
+
+  <!-- Page Title -->
+  <header class="text-center py-8 border-b border-gray-300">
+    <h1 class="text-4xl font-bold uppercase">My Project Title</h1>
+  </header>
+
+  <!-- Section: What's Inside the ZIP -->
+  <section>
+    <h2 class="text-2xl font-semibold mb-4">What’s Included in the Project ZIP?</h2>
+    <ul class="list-disc pl-6 space-y-1 text-gray-700">
+      <!-- If nothing is available, show the message below. Replace/remove lines as needed. -->
+      <li>No presentation or documentation included in this package.</li>
+      <!-- Example for when available -->
+      <!-- <li>✅ Presentation: Yes</li>
+      <li>Total Slides: 10</li>
+      <li>Presentation Size: 4.2 MB</li>
+      <li>✅ Documentation: Yes</li>
+      <li>Total Pages: 25</li>
+      <li>Documentation Size: 2.7 MB</li> -->
+    </ul>
+  </section>
+
+  <!-- Section: Technologies Used -->
+  <section>
+    <h2 class="text-2xl font-semibold mb-4">Technologies Used</h2>
+    <div class="overflow-auto">
+      <table class="w-full text-sm border border-gray-900">
+        <thead>
+          <tr class="bg-gray-200 text-gray-900">
+            <th class="border border-gray-900 px-4 py-2">Technology</th>
+            <th class="border border-gray-900 px-4 py-2">Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="bg-white">
+            <td class="border border-gray-900 px-4 py-2">HTML</td>
+            <td class="border border-gray-900 px-4 py-2">Page Structure</td>
+          </tr>
+          <tr class="bg-gray-100">
+            <td class="border border-gray-900 px-4 py-2">Tailwind CSS</td>
+            <td class="border border-gray-900 px-4 py-2">Styling & Layout</td>
+          </tr>
+          <tr class="bg-white">
+            <td class="border border-gray-900 px-4 py-2">JavaScript</td>
+            <td class="border border-gray-900 px-4 py-2">Interactivity</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section: Database Structure -->
+  <section>
+    <h2 class="text-2xl font-semibold mb-4">Database Structure</h2>
+    <div class="overflow-auto">
+      <table class="w-full text-sm border border-gray-900">
+        <thead>
+          <tr class="bg-gray-200 text-gray-900">
+            <th class="border border-gray-900 px-4 py-2">Table Name</th>
+            <th class="border border-gray-900 px-4 py-2">Fields</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="bg-white">
+            <td class="border border-gray-900 px-4 py-2">Users</td>
+            <td class="border border-gray-900 px-4 py-2">ID, Name, Email, Password</td>
+          </tr>
+          <tr class="bg-gray-100">
+            <td class="border border-gray-900 px-4 py-2">Buses</td>
+            <td class="border border-gray-900 px-4 py-2">ID, Number, Route, Time</td>
+          </tr>
+          <tr class="bg-white">
+            <td class="border border-gray-900 px-4 py-2">Bookings</td>
+            <td class="border border-gray-900 px-4 py-2">ID, UserID, BusID, Seat, Date</td>
+          </tr>
+          <tr class="bg-gray-100">
+            <td class="border border-gray-900 px-4 py-2">Transactions</td>
+            <td class="border border-gray-900 px-4 py-2">ID, BookingID, Amount, Status</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+<!-- Section: Screenshots -->
+<section>
+  <h2 class="text-2xl font-semibold mb-4 text-center">Screenshots</h2>
+  <div class="max-w-4xl mx-auto"> <!-- max width container and center -->
+    <div class="aspect-w-16 aspect-h-9">
+      <img src="screenshot1.jpg" alt="Screenshot 1" class="w-full h-full object-contain rounded-md border border-gray-900 shadow-md" />
+    </div>
+  </div>
+</section>
+
+  <!-- Section: Purchase Button -->
+  <section class="text-center pt-10">
+    <button class="bg-gray-900 text-white font-bold py-3 px-6 rounded hover:bg-gray-700 transition">
+      Purchase Now
+    </button>
+  </section>
+
+</body>
+</html>
