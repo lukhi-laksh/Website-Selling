@@ -3,140 +3,155 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | MinorMajorWeb</title>
+  <title>MinorMajorWeb</title>
+  
+  <!-- SEO Meta Tags -->
   <meta name="description" content="Explore our responsive static website with cards and navigation." />
   <meta name="keywords" content="NAPSHILA, bus booking, services, cards, responsive" />
   <meta name="author" content="NAPSHILA Team" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Home | MinorMajorWeb" />
+  <meta property="og:description" content="Explore our responsive static website with cards and navigation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourwebsiteurl.com/" />
+  <meta property="og:image" content="https://yourwebsiteurl.com/og-image.jpg" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Home | MinorMajorWeb" />
+  <meta name="twitter:description" content="Explore our responsive static website with cards and navigation." />
+  <meta name="twitter:image" content="https://yourwebsiteurl.com/twitter-image.jpg" />
+  
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen flex flex-col bg-white text-gray-800 font-sans">
 
-  <!-- Header -->
 <header class="py-5 bg-white shadow relative">
-  <div class="container mx-auto flex justify-center items-center relative">
+  <div class="container mx-auto flex items-center justify-center relative px-4 md:px-0">
 
-    <!-- Logo: Left aligned with 5px margin -->
-    <a href="../../index.html" class="absolute left-[18px] top-1/2 -translate-y-1/2">
-      <img src="../../logo.svg" alt="MinorMajorWeb Logo" class="h-10 w-auto">
+    <!-- Logo: Left aligned with margin -->
+    <a href="../../index.html" class="absolute left-4 top-1/2 -translate-y-1/2">
+      <img src="../../logo.svg" alt="MinorMajorWeb Logo" class="h-10 w-auto" />
     </a>
 
-    <!-- Navigation: Centered -->
+    <!-- Navigation: centered horizontally, responsive -->
     <nav>
-      <ul class="flex space-x-10 text-gray-600 text-sm font-medium">
+      <ul class="flex flex-col md:flex-row md:space-x-10 text-gray-600 text-sm font-medium items-center space-y-3 md:space-y-0">
         <li><a href="../../index.html" class="hover:text-black border-b-2 border-transparent hover:border-black pb-1">Home</a></li>
         <li><a href="../../about-us.html" class="hover:text-black border-b-2 border-transparent hover:border-black pb-1">About Us</a></li>
         <li><a href="../../contact-us.html" class="hover:text-black border-b-2 border-transparent hover:border-black pb-1">Contact Us</a></li>
+        <li><a href="../../login.html" class="hover:text-black border-b-2 border-transparent hover:border-black pb-1">Login</a></li>
+        <li><a href="../../sign-up.html" class="hover:text-black border-b-2 border-transparent hover:border-black pb-1">Sign Up</a></li>
       </ul>
     </nav>
 
   </div>
 </header>
 
-
-  <!-- Cards Section -->
-  <main class="flex-grow px-4 py-10">
+<!-- Cards Section -->
+<main class="flex-grow px-4 py-10">
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
     <!-- Card with image (3.5:2 aspect ratio) -->
     <a href="#" class="block overflow-hidden rounded-lg shadow hover:shadow-lg transition">
       <div class="w-full aspect-[3.5/2]">
-        <img src="your-image1.jpg" alt="Error-404" class="w-full h-full object-cover">
+        <img src="your-image1.jpg" alt="Error-404" class="w-full h-full object-cover" />
       </div>
     </a>
 
     <a href="#" class="block overflow-hidden rounded-lg shadow hover:shadow-lg transition">
       <div class="w-full aspect-[3.5/2]">
-        <img src="your-image2.jpg" alt="Error-404" class="w-full h-full object-cover">
+        <img src="your-image2.jpg" alt="Error-404" class="w-full h-full object-cover" />
       </div>
     </a>
 
     <a href="#" class="block overflow-hidden rounded-lg shadow hover:shadow-lg transition">
       <div class="w-full aspect-[3.5/2]">
-        <img src="your-image3.jpg" alt="Error-404" class="w-full h-full object-cover">
+        <img src="your-image3.jpg" alt="Error-404" class="w-full h-full object-cover" />
       </div>
     </a>
 
     <a href="#" class="block overflow-hidden rounded-lg shadow hover:shadow-lg transition">
       <div class="w-full aspect-[3.5/2]">
-        <img src="your-image4.jpg" alt="Error-404" class="w-full h-full object-cover">
+        <img src="your-image4.jpg" alt="Error-404" class="w-full h-full object-cover" />
       </div>
     </a>
 
     <a href="#" class="block overflow-hidden rounded-lg shadow hover:shadow-lg transition">
       <div class="w-full aspect-[3.5/2]">
-        <img src="your-image5.jpg" alt="Error-404" class="w-full h-full object-cover">
+        <img src="your-image5.jpg" alt="Error-404" class="w-full h-full object-cover" />
       </div>
     </a>
 
     <a href="#" class="block overflow-hidden rounded-lg shadow hover:shadow-lg transition">
       <div class="w-full aspect-[3.5/2]">
-        <img src="your-image6.jpg" alt="Error-404" class="w-full h-full object-cover">
+        <img src="your-image6.jpg" alt="Error-404" class="w-full h-full object-cover" />
       </div>
     </a>
 
     <a href="#" class="block overflow-hidden rounded-lg shadow hover:shadow-lg transition">
       <div class="w-full aspect-[3.5/2]">
-        <img src="your-image7.jpg" alt="Error-404" class="w-full h-full object-cover">
+        <img src="your-image7.jpg" alt="Error-404" class="w-full h-full object-cover" />
       </div>
     </a>
 
     <a href="#" class="block overflow-hidden rounded-lg shadow hover:shadow-lg transition">
       <div class="w-full aspect-[3.5/2]">
-        <img src="your-image8.jpg" alt="Error-404" class="w-full h-full object-cover">
+        <img src="your-image8.jpg" alt="Error-404" class="w-full h-full object-cover" />
       </div>
     </a>
 
     <a href="#" class="block overflow-hidden rounded-lg shadow hover:shadow-lg transition">
       <div class="w-full aspect-[3.5/2]">
-        <img src="your-image9.jpg" alt="Error-404" class="w-full h-full object-cover">
+        <img src="your-image9.jpg" alt="Error-404" class="w-full h-full object-cover" />
       </div>
     </a>
 
     <a href="#" class="block overflow-hidden rounded-lg shadow hover:shadow-lg transition">
       <div class="w-full aspect-[3.5/2]">
-        <img src="your-image10.jpg" alt="Error-404" class="w-full h-full object-cover">
+        <img src="your-image10.jpg" alt="Error-404" class="w-full h-full object-cover" />
       </div>
     </a>
 
     <a href="#" class="block overflow-hidden rounded-lg shadow hover:shadow-lg transition">
       <div class="w-full aspect-[3.5/2]">
-        <img src="your-image11.jpg" alt="Error-404" class="w-full h-full object-cover">
+        <img src="your-image11.jpg" alt="Error-404" class="w-full h-full object-cover" />
       </div>
     </a>
 
     <a href="#" class="block overflow-hidden rounded-lg shadow hover:shadow-lg transition">
       <div class="w-full aspect-[3.5/2]">
-        <img src="your-image12.jpg" alt="Error-404" class="w-full h-full object-cover">
+        <img src="your-image12.jpg" alt="Error-404" class="w-full h-full object-cover" />
       </div>
     </a>
-    </div>
-  <!-- Pagination -->
-<div class="w-full overflow-x-auto scrollbar-hide">
-  <div class="flex space-x-px mt-10 px-4 w-max">
-    <!-- Example buttons -->
-    <a href="../../index.html" class="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full hover:scale-105 transition">1</a>
-    <a href="../Page-2/Page-2.html" class="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full hover:scale-105 transition">2</a>
-    <a href="../Page-3/Page-3.html" class="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full hover:scale-105 transition">3</a>
-    <a href="../Page-4/Page-4.html" class="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full hover:scale-105 transition">4</a>
-    <a href="../Page-5/Page-5.html" class="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full hover:scale-105 transition">5</a>
-    <a href="../Page-6/Page-6.html" class="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full hover:scale-105 transition">6</a>
-    <a href="../Page-7/Page-7.html" class="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full hover:scale-105 transition">7</a>
-    <a href="../Page-8/Page-8.html" class="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full hover:scale-105 transition">8</a>
-    <a href="../Page-9/Page-9.html" class="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full hover:scale-105 transition">9</a>
-    <a href="../Page-10/Page-10.html" class="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full hover:scale-105 transition">10</a>
   </div>
-</div>
+
+  <!-- Pagination -->
+  <div class="w-full overflow-x-auto scrollbar-hide">
+    <div class="flex space-x-px mt-10 px-4 w-max">
+      <a href="../../index.html" class="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full hover:scale-105 transition">1</a>
+      <a href="../Page-2/Page-2.html" class="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full hover:scale-105 transition">2</a>
+      <a href="../Page-3/Page-3.html" class="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full hover:scale-105 transition">3</a>
+      <a href="../Page-4/Page-4.html" class="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full hover:scale-105 transition">4</a>
+      <a href="../Page-5/Page-5.html" class="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full hover:scale-105 transition">5</a>
+      <a href="../Page-6/Page-6.html" class="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full hover:scale-105 transition">6</a>
+      <a href="../Page-7/Page-7.html" class="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full hover:scale-105 transition">7</a>
+      <a href="../Page-8/Page-8.html" class="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full hover:scale-105 transition">8</a>
+      <a href="../Page-9/Page-9.html" class="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full hover:scale-105 transition">9</a>
+      <a href="../Page-10/Page-10.html" class="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full hover:scale-105 transition">10</a>
+    </div>
+  </div>
 
 </main>
 
-
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6 mt-10">
-    <div class="flex justify-center space-x-8 text-lg">
-      <a href="index.html" class="hover:underline">Home</a>
-      <a href="about-us.html" class="hover:underline">About Us</a>
-      <a href="contact-us.html" class="hover:underline">Contact Us</a>
-    </div>
-  </footer>
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-6 mt-10">
+  <div class="flex justify-center space-x-8 text-lg">
+    <a href="../../index.html" class="hover:underline">Home</a>
+    <a href="../../about-us.html" class="hover:underline">About Us</a>
+    <a href="../../contact-us.html" class="hover:underline">Contact Us</a>
+  </div>
+</footer>
 
 </body>
 </html>
