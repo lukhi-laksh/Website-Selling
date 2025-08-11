@@ -2,64 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MinorMajorWeb — Auth</title>
-
-  <!-- Tailwind CSS CDN -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | MinorMajorWeb</title>
+  <meta name="description" content="Explore our responsive static website with cards and navigation." />
+  <meta name="keywords" content="NAPSHILA, bus booking, services, cards, responsive" />
+  <meta name="author" content="NAPSHILA Team" />
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    body.modal-open {
-      overflow: hidden;
-    }
-    .blurred {
-      filter: blur(6px);
-      pointer-events: none;
-      user-select: none;
-    }
-  </style>
 </head>
-<body class="bg-white font-sans min-h-screen flex flex-col">
-
-  <!-- Auth Modal -->
-  <div id="auth-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-white/10 backdrop-blur-sm">
-    <div class="bg-white border-2 border-black w-full max-w-sm p-8 rounded-lg flex flex-col space-y-6 select-none"
-      style="box-shadow: 0 5px 15px rgba(0, 0, 0, 0.99);">
-
-      <!-- Tabs -->
-      <div class="flex justify-center space-x-8 cursor-pointer">
-        <div id="tab-login" class="border-b-4 border-black font-bold text-black pb-1">Login</div>
-        <div id="tab-signup" class="text-gray-500 hover:text-black">Sign Up</div>
-      </div>
-
-      <!-- Login Form -->
-      <form id="login-form" class="flex flex-col space-y-4">
-        <input id="login-email" type="email" placeholder="Email" required
-          class="border border-black rounded px-3 py-2 text-black" />
-        <input id="login-password" type="password" placeholder="Password" required
-          class="border border-black rounded px-3 py-2 text-black" />
-        <button type="submit"
-          class="bg-black text-white font-bold py-2 rounded hover:bg-gray-800 transition">Login</button>
-        <div class="text-center font-semibold">OR</div>
-        <button type="button" id="google-login-btn"
-          class="bg-white border border-black text-black font-bold py-2 rounded hover:bg-black hover:text-white transition">
-          Login with Google
-        </button>
-      </form>
-
-      <!-- Signup Form -->
-      <form id="signup-form" class="hidden flex flex-col space-y-4">
-        <input id="signup-email" type="email" placeholder="Email" required
-          class="border border-black rounded px-3 py-2 text-black" />
-        <input id="signup-password" type="password" placeholder="Password" required
-          class="border border-black rounded px-3 py-2 text-black" />
-        <button type="submit"
-          class="bg-black text-white font-bold py-2 rounded hover:bg-gray-800 transition">Sign Up</button>
-      </form>
-    </div>
-  </div>
-
-<div class="min-h-screen flex flex-col bg-white text-gray-800 font-sans" id="page-content" class="blurred">
+<body class="min-h-screen flex flex-col bg-white text-gray-800 font-sans">
 
 <header class="py-5 bg-white shadow relative">
   <div class="container mx-auto flex items-center justify-center relative px-4 md:px-0">
@@ -190,118 +140,6 @@
       <a href="contact-us.html" class="hover:underline">Contact Us</a>
     </div>
   </footer>
-  </div>
-
-  <!-- Firebase SDKs and your config -->
-  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore-compat.js"></script>
-
-  <!-- Your Firebase config file -->
-  <script src="src/firebase-config.js"></script>
-
-  <script>
-    const modal = document.getElementById('auth-modal');
-    const pageContent = document.getElementById('page-content');
-
-    const tabLogin = document.getElementById('tab-login');
-    const tabSignup = document.getElementById('tab-signup');
-    const loginForm = document.getElementById('login-form');
-    const signupForm = document.getElementById('signup-form');
-
-    // Tab switch handlers
-    tabLogin.addEventListener('click', () => {
-      tabLogin.classList.add('border-black', 'font-bold', 'text-black');
-      tabLogin.classList.remove('text-gray-500');
-      tabSignup.classList.remove('border-black', 'font-bold', 'text-black');
-      tabSignup.classList.add('text-gray-500');
-      loginForm.classList.remove('hidden');
-      signupForm.classList.add('hidden');
-    });
-
-    tabSignup.addEventListener('click', () => {
-      tabSignup.classList.add('border-black', 'font-bold', 'text-black');
-      tabSignup.classList.remove('text-gray-500');
-      tabLogin.classList.remove('border-black', 'font-bold', 'text-black');
-      tabLogin.classList.add('text-gray-500');
-      signupForm.classList.remove('hidden');
-      loginForm.classList.add('hidden');
-    });
-
-    // Disable page scroll while modal open
-    document.body.classList.add('modal-open');
-
-    // Login form submit
-    loginForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const email = document.getElementById('login-email').value.trim();
-      const password = document.getElementById('login-password').value.trim();
-      try {
-        const userCredential = await auth.signInWithEmailAndPassword(email, password);
-        const user = userCredential.user;
-
-        // Save email and lastLogin timestamp (merge to not overwrite)
-        await db.collection('users').doc(user.uid).set({
-          email: user.email,
-          lastLogin: firebase.firestore.FieldValue.serverTimestamp()
-        }, { merge: true });
-
-        redirectAfterLogin();
-      } catch (error) {
-        alert("Login Error: " + error.message);
-      }
-    });
-
-    // Signup form submit
-    signupForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const email = document.getElementById('signup-email').value.trim();
-      const password = document.getElementById('signup-password').value.trim();
-      try {
-        const userCredential = await auth.createUserWithEmailAndPassword(email, password);
-        const user = userCredential.user;
-
-        // Save email and createdAt timestamp
-        await db.collection('users').doc(user.uid).set({
-          email: user.email,
-          createdAt: firebase.firestore.FieldValue.serverTimestamp()
-        });
-
-        redirectAfterLogin();
-      } catch (error) {
-        alert("Signup Error: " + error.message);
-      }
-    });
-
-    // Google login button
-    document.getElementById('google-login-btn').addEventListener('click', async () => {
-      try {
-        const provider = new firebase.auth.GoogleAuthProvider();
-        const userCredential = await auth.signInWithPopup(provider);
-        const user = userCredential.user;
-
-        await db.collection('users').doc(user.uid).set({
-          email: user.email,
-          name: user.displayName,
-          lastLogin: firebase.firestore.FieldValue.serverTimestamp()
-        }, { merge: true });
-
-        redirectAfterLogin();
-      } catch (error) {
-        alert("Google login failed: " + error.message);
-      }
-    });
-
-    function redirectAfterLogin() {
-      // Hide modal & remove blur
-      modal.style.display = 'none';
-      pageContent.classList.remove('blurred');
-      document.body.classList.remove('modal-open');
-
-      // Redirect to home.html
-      window.location.href = 'home.html';
-    }
-  </script>
 
 </body>
 </html>
