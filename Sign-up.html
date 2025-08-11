@@ -1,11 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <title>Sign Up</title>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore-compat.js"></script>
+
+  <!-- Your Firebase config -->
+  <script src="src/firebase-config.js"></script>
+
+  <!-- Your custom code -->
+  <script src="src/main.js"></script>
 </head>
 <body>
-    
+  <h2>Create an Account</h2>
+
+  <input type="email" id="signup-email" placeholder="Email" required />
+  <input type="password" id="signup-password" placeholder="Password" required />
+  <button id="signup-btn">Sign Up</button>
+
+  <p>Already have an account? <a href="login.html">Login here</a></p>
+
+  <script>
+    document.getElementById("signup-btn").addEventListener("click", async () => {
+      const email = document.getElementById("signup-email").value;
+      const password = document.getElementById("signup-password").value;
+
+      try {
+        const user = await window.signup(email, password);
+        alert(`Account created for: ${user.email}`);
+        window.location.href = "login.html"; // redirect after signup
+      } catch (error) {
+        alert("Error: " + error.message);
+      }
+    });
+  </script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+{
+  "name": "website-selling",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000W\u0000e\u0000b\u0000s\u0000i\u0000t\u0000e\u0000-\u0000S\u0000e\u0000l\u0000l\u0000i\u0000n\u0000g\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukhi-laksh/Website-Selling.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lukhi-laksh/Website-Selling/issues"
+  },
+  "homepage": "https://github.com/lukhi-laksh/Website-Selling#readme",
+  "dependencies": {
+    "firebase": "^12.1.0"
+  }
+}

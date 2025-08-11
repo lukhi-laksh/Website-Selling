@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head><title>Dashboard</title></head>
+<body>
+  <h1>Dashboard</h1>
+  <div id="user-info"></div>
+  <h2>Your Purchases</h2>
+  <ul id="purchases-list"></ul>
+  <button id="logout-btn">Logout</button>
+
+  <script type="module">
+    import { onAuthChange, logout, getPurchases } from './src/main.js';
+
+    onAuthChange(async (user) => {
+      if (!user) {
+        window.location.href = 'login.html';  // redirect if not logged in
+        return;
+      }
+
+      document.getElementById('user-info').textContent = `Logged in as: ${user.email}`;
+
+      const purchases = await getPurchases(user.uid);
+      const list = document.getElementById('purchases-list');
+      list.innerHTML = '';
+
+      if (purchases.length === 0) {
+        list.textContent = 'No purchases yet.';
+      } else {
+        purchases.forEach(purchase => {
+          const li = document.createElement('li');
+          li.textContent = JSON.stringify(purchase);
+          list.appendChild(li);
+        });
+      }
+    });
+
+    document.getElementById('logout-btn').addEventListener('click', async () => {
+      await logout();
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>
